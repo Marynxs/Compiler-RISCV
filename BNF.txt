@@ -1,0 +1,37 @@
+<programa> ::= <comando> | <comando> <programa>
+
+<comando> ::= <declaracao> | <atribuicao> | <condicional> | <laco> | <break_stmt> | <continue_stmt>
+
+<declaracao> ::= "var " <identificador> ";" | "var " <identificador> " = " <expressao> ";"
+
+<atribuicao> ::= <identificador> " = " <expressao> ";"
+
+<condicional> ::= "if (" <expressao> ") { " <programa> " }" | "if (" <expressao> ") { " <programa> " } else { " <programa> " }"
+
+<laco> ::= "while (" <expressao> ") { " <programa> " }" | "for (" <atribuicao> <expressao> "; " <atribuicao> ") { " <programa> " }"
+
+<break_stmt> ::= "break;"
+
+<continue_stmt> ::= "continue;"
+
+<expressao> ::= <termo> | <expressao> " + " <termo> | <expressao> " - " <termo>
+
+<termo> ::= <fator> | <termo> " * " <fator> | <termo> " / " <fator>
+
+<fator> ::= <identificador> | <numero> | <booleano> | <string> | "(" <expressao> ")"
+
+<booleano> ::= "true" | "false"
+
+<string> ::= "\"" <conteudo_string> "\""
+
+<conteudo_string> ::= " " | <char> | <char> <conteudo_string>
+
+<char> ::= <letra> | <digito> | " " | "!" | "?" | "." | "," | ":" | ";" | "-" | "_"
+
+<identificador> ::= <letra> | <identificador> <letra> | <identificador> <digito>
+
+<numero> ::= <digito> | <numero> <digito>
+
+<letra> ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
+
+<digito> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
